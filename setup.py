@@ -3,13 +3,10 @@ import sys
 from distutils.core import setup
 from setuptools import find_packages
 
-version = '0.1.5'
+version = '0.2.0'
 
 install_requires = [
-    'acme>=0.9.0',
-    'certbot>=0.9.0',
-    'zope.interface',
-    'boto3',
+    'certbot-dns-route53',
 ]
 
 setup(
@@ -39,9 +36,4 @@ setup(
     packages=find_packages(),
     install_requires=install_requires,
     keywords=['certbot', 'route53', 'aws'],
-    entry_points={
-        'certbot.plugins': [
-            'auth = certbot_route53.authenticator:Authenticator'
-        ],
-    },
 )
